@@ -148,8 +148,20 @@ SELECT `school_db_instructor`.`id`,
 # Print the instructors name and courses that he belongs to in the terminal
 # (Do not hard code his name in the print)
 def problem_three(request):
+  instructor = Instructor.objects.get(pk=2)
+  
+  print(f'Instructor Name: {instructor.first_name} {instructor.last_name}')
+  print('Courses:')
+  
+  courses = Course.objects.filter(instructor_id = 2)
+  
+  for course in courses:
+    print(course.name)
+  return complete(request)
 
-    return complete(request)
+  
+  
+  
 
 
 # Supporting Query Method Documentation:
