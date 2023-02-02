@@ -301,9 +301,7 @@ def problem_six(request):
     print(f'Full Name: {student.first_name} {student.last_name}')
     print(f'GPA: {student.gpa}')
 
-    # Make sure to set this equal to the primary key of the row you just created!
-    student_id = 11
-
+    
     return complete(request)
 
 
@@ -347,7 +345,10 @@ LIMIT 21
 # Delete the student that you have created and updated
 # Check your MySQL Workbench to confirm the student is no longer in the table!
 def problem_seven(request):
-
+    Student.objects.filter(id=11).delete()
+    Student.objects.filter(id=12).delete()
+    Student.objects.filter(id=13).delete()
+    Student.objects.filter(id=14).delete()
     # Make sure to set this equal to the primary key of the row you just created!
     student_id = 11
 
